@@ -9,17 +9,17 @@ def get_connection(db, user=user, host=host, password=password):
 
 
 ################ Acquire Mall Customers Data ###################
-def new_mall_data()
+def new_mall_data():
     '''
     This function reads the mall customer data from the Codeup db into a df, write
     it to a csv file, and returns the df.
     '''
     sql_query = 'SELECT * FROM customers'
     df = pd.read_sql(sql_query, get_connection('mall_customers'))
-    df.to_csv('mall_customers_df.csv)')
+    df.to_csv('mall_customers_df.csv')
     return df
 
-def get_mall_data(cached=False)
+def get_mall_data(cached=False):
     '''
     This function reads in mall customer data from Codeup database if cached == False
     or if cached == True reads in mall customer df from a csv file, returns df
